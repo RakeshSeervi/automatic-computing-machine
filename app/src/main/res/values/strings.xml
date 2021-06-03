@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Form UI</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="address">Address</string>
+    <string name="country">Country</string>
+    <string name="submit">Submit</string>
+    <string name="logoipsum">Logoipsum</string>
+    <string name="image_description">google_logo</string>
+    <string name="google_text">google_text</string>
+    <string name="google_logo">google_logo</string>
+    <string name="kaku18is_cmrit_ac_in">kaku18is@cmrit.ac.in</string>
+    <string name="kanhaya_kumar_yadav">Kanhaya kumar Yadav</string>
+    <string name="software_developer">Software Developer</string>
+    <string name="bangalore_560075">Bangalore 560075</string>
+    <string name="_91_8073960134">+91 8073960134</string>
+    <string name="email_id">rakeshseervi.workspace@gmail.com</string>
+    <string name="website">rakeshseervi.github.io</string>
+    <string name="phone_number">7019271367</string>
+    <string name="name">Rakesh Seervi</string>
+    <string name="company_logo">company_logo</string>
+    <string name="addtocontactsbtn">addToContactsBtn</string>
+    <string name="dialbtn">dialBtn</string>
+    <string name="backspacebtn">backspaceBtn</string>
+    <string name="asterisk">*</string>
+    <string name="_0">0</string>
+    <string name="hash">#</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+</resources>

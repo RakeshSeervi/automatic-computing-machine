@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display2</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">?android:attr/colorForeground</item>
+    </style>
+</resources>

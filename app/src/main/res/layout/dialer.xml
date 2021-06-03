@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addToContactsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dialBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_person_add_32"
+            android:contentDescription="@string/addtocontactsbtn" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/dialBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:onClick="onClickListener"
+            android:contentDescription="@string/dialbtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/backspaceBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/addToContactsBtn"
+            app:srcCompat="@drawable/ic_baseline_call_32" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/backspaceBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:onClick="onClickListener"
+            android:contentDescription="@string/backspacebtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dialBtn"
+            app:srcCompat="@drawable/ic_baseline_backspace_32" />
+
+        <Button
+            android:id="@+id/asteriskBtn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/asterisk"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/addToContactsBtn"
+            app:layout_constraintEnd_toStartOf="@+id/_0_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/_0_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_0"
+            android:tag="@string/_0"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/dialBtn"
+            app:layout_constraintEnd_toStartOf="@+id/hashBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/asteriskBtn" />
+
+        <Button
+            android:id="@+id/hashBtn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/hash"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/backspaceBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_0_btn" />
+
+        <Button
+            android:id="@+id/_1_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_1"
+            android:tag="@string/_1"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/asteriskBtn"
+            app:layout_constraintEnd_toStartOf="@+id/_2_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/_2_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_2"
+            android:tag="@string/_2"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_0_btn"
+            app:layout_constraintEnd_toStartOf="@+id/_3_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_1_btn" />
+
+        <Button
+            android:id="@+id/_3_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_3"
+            android:tag="@string/_3"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/hashBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_2_btn" />
+
+        <Button
+            android:id="@+id/_4_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_4"
+            android:tag="@string/_4"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_1_btn"
+            app:layout_constraintEnd_toStartOf="@+id/_5_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/_5_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_5"
+            android:tag="@string/_5"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_2_btn"
+            app:layout_constraintEnd_toStartOf="@+id/_6_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_4_btn" />
+
+        <Button
+            android:id="@+id/_6_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_6"
+            android:tag="@string/_6"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_3_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_5_btn" />
+
+        <Button
+            android:id="@+id/_7_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_7"
+            android:tag="@string/_7"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_4_btn"
+            app:layout_constraintEnd_toStartOf="@+id/_8_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/_8_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_8"
+            android:tag="@string/_8"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_5_btn"
+            app:layout_constraintEnd_toStartOf="@+id/_9_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_7_btn" />
+
+        <Button
+            android:id="@+id/_9_btn"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/_9"
+            android:tag="@string/_9"
+            android:onClick="onClickListener"
+            app:layout_constraintBottom_toTopOf="@+id/_6_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/_8_btn" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="379dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/teal_200"
+            app:layout_constraintBottom_toTopOf="@+id/_8_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/phoneNumberView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toTopOf="@+id/divider3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="701 927 1367" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
