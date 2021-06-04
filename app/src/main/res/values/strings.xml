@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Form UI</string>
+    <string name="app_name">Dialer</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="address">Address</string>

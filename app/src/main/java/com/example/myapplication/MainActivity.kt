@@ -3,12 +3,13 @@ package com.example.myapplication
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.View
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
@@ -21,22 +22,37 @@ class MainActivity : AppCompatActivity() {
         phoneNumberView = findViewById(R.id.phoneNumberView)
     }
 
-    val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-        isGranted: Boolean ->
-        if (isGranted)
-            dial()
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when(requestCode){
+            1 -> dial()
+        }
     }
 
-    fun dial(){
-        val intent = Intent(Intent.ACTION_DIAL).apply {
+    private fun dial(){
+        val intent = Intent(Intent.ACTION_CALL).apply {
             data = Uri.parse("tel:$phoneNumber")
         }
         if (intent.resolveActivity(packageManager) != null) {
-            println("success")
             startActivity(intent)
         }
     }
 
+    private fun addToContacts(){
+        val intent = Intent(Intent.ACTION_INSERT).apply {
+            type = ContactsContract.Contacts.CONTENT_TYPE
+            putExtra(ContactsContract.Intents.Insert.PHONE, phoneNumber)
+        }
+        if (intent.resolveActivity(packageManager)!=null) {
+            startActivity(intent)
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
     fun onClickListener(button: View){
         when(button.id){
             R.id.dialBtn -> {
@@ -45,25 +61,17 @@ class MainActivity : AppCompatActivity() {
                         this,
                         android.Manifest.permission.CALL_PHONE
                     ) == PackageManager.PERMISSION_GRANTED -> {
-                        println("Already granted")
+                        // permission already granted
                         dial()
                     }
                     else -> {
-                        println("Requesting permission")
-                        requestPermissionLauncher.launch(android.Manifest.permission.CALL_PHONE)
+                        // requesting permission
+                        requestPermissions(arrayOf(android.Manifest.permission.CALL_PHONE), 1)
                     }
                 }
             }
             R.id.addToContactsBtn -> {
-                val intent = Intent(Intent.ACTION_INSERT).apply {
-                    type = ContactsContract.Contacts.CONTENT_TYPE
-                    putExtra(ContactsContract.Intents.Insert.PHONE, phoneNumber)
-                }
-                if (intent.resolveActivity(packageManager)!=null) {
-                    startActivity(intent)
-                    println("success")
-                }
-                println("done")
+                addToContacts()
             }
             R.id.backspaceBtn -> {
                 phoneNumber = phoneNumber.dropLast(1)
