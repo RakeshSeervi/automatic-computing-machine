@@ -1,34 +1,58 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     lateinit var phoneNumberView: TextView
     var phoneNumber = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialer)
         phoneNumberView = findViewById(R.id.phoneNumberView)
     }
 
+    val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+        isGranted: Boolean ->
+        if (isGranted)
+            dial()
+    }
+
+    fun dial(){
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:$phoneNumber")
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            println("success")
+            startActivity(intent)
+        }
+    }
+
     fun onClickListener(button: View){
         when(button.id){
             R.id.dialBtn -> {
-                val intent = Intent(Intent.ACTION_DIAL).apply {
-                        data = Uri.parse("tel:$phoneNumber")
+                when {
+                    ContextCompat.checkSelfPermission(
+                        this,
+                        android.Manifest.permission.CALL_PHONE
+                    ) == PackageManager.PERMISSION_GRANTED -> {
+                        println("Already granted")
+                        dial()
                     }
-                if (intent.resolveActivity(packageManager) != null) {
-                    println("success")
-                    startActivity(intent)
+                    else -> {
+                        println("Requesting permission")
+                        requestPermissionLauncher.launch(android.Manifest.permission.CALL_PHONE)
+                    }
                 }
-                println("done")
             }
             R.id.addToContactsBtn -> {
                 val intent = Intent(Intent.ACTION_INSERT).apply {
