@@ -32,7 +32,7 @@ class SignIn : Fragment() {
         val args = SignInArgs.fromBundle(requireArguments())
         username = args.username
         password = args.password
-
+        binding.login.setOnClickListener { onClickListener(it) }
         return binding.root
     }
 
