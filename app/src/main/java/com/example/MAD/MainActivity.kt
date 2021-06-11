@@ -10,16 +10,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // Auth
-//        setContentView(R.layout.activity_main)
-
-        // Card
-        // setContentView(R.layout.card_rakesh)
-        // setContentView(R.layout.card_kanhaya)
-
-        // dialer
-//         val intent = Intent(this, dialer::class.java)
-//         startActivity(intent)
     }
 
     fun onClickListener(view: View) {

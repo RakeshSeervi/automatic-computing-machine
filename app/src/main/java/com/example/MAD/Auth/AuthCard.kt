@@ -22,7 +22,6 @@ class AuthCard : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = "Card"
 
         val binding = FragmentCardBinding.inflate(inflater, container, false)
-//        val args = AuthCardArgs.fromBundle(requireArguments())
         val args = arguments?.let {
             AuthCardArgs.fromBundle(requireArguments())
         }

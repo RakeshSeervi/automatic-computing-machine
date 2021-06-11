@@ -30,35 +30,9 @@ class SignIn : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = "Sign In"
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         val args = SignInArgs.fromBundle(requireArguments())
-        binding.login.setOnClickListener {
-            if (binding.username.text.toString() == args.username && binding.password.text.toString() == args.password) {
-                findNavController().navigate(
-                    SignInDirections.actionLoginFragmentToCard(
-                        binding.username.text.toString()
-                    )
-                )
-                val appContext = context?.applicationContext
-                if (appContext != null)
-                    Toast.makeText(appContext, "Login successful!", Toast.LENGTH_LONG).show()
-            } else {
-                count += 1
-                if (count == 2) {
-                    it.isEnabled = false
-                    val appContext = context?.applicationContext
-                    if (appContext != null)
-                        Toast.makeText(appContext, "Max attempts exceeded", Toast.LENGTH_LONG)
-                            .show()
-                } else {
-                    val appContext = context?.applicationContext
-                    if (appContext != null)
-                        Toast.makeText(
-                            appContext,
-                            "Login failed! One attempt left.",
-                            Toast.LENGTH_LONG
-                        ).show()
-                }
-            }
-        }
+        username = args.username
+        password = args.password
+
         return binding.root
     }
 
@@ -100,5 +74,35 @@ class SignIn : Fragment() {
 
         usernameEditText.addTextChangedListener(afterUsernameChangedListener)
         passwordEditText.addTextChangedListener(afterPasswordChangedListener)
+    }
+
+    fun onClickListener(view: View) {
+        if (binding.username.text.toString() == username && binding.password.text.toString() == password) {
+            findNavController().navigate(
+                SignInDirections.actionLoginFragmentToCard(
+                    binding.username.text.toString()
+                )
+            )
+            val appContext = context?.applicationContext
+            if (appContext != null)
+                Toast.makeText(appContext, "Login successful!", Toast.LENGTH_LONG).show()
+        } else {
+            count += 1
+            if (count == 2) {
+                binding.login.isEnabled = false
+                val appContext = context?.applicationContext
+                if (appContext != null)
+                    Toast.makeText(appContext, "Max attempts exceeded", Toast.LENGTH_LONG)
+                        .show()
+            } else {
+                val appContext = context?.applicationContext
+                if (appContext != null)
+                    Toast.makeText(
+                        appContext,
+                        "Login failed! One attempt left.",
+                        Toast.LENGTH_LONG
+                    ).show()
+            }
+        }
     }
 }
