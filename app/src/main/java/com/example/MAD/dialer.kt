@@ -1,23 +1,24 @@
-package com.example.myapplication
+package com.example.MAD
 
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
-class MainActivity : AppCompatActivity() {
+class dialer : AppCompatActivity() {
     lateinit var phoneNumberView: TextView
     var phoneNumber = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.title = "Dialer"
         setContentView(R.layout.dialer)
         phoneNumberView = findViewById(R.id.phoneNumberView)
     }
@@ -94,6 +95,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        println(phoneNumber)
     }
 }
