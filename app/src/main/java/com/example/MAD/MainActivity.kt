@@ -13,19 +13,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickListener(view: View) {
-        when (view.id) {
-            R.id.card_button -> {
-                val intent = Intent(this, Card::class.java)
-                startActivity(intent)
-            }
-            R.id.dialer_button -> {
-                val intent = Intent(this, dialer::class.java)
-                startActivity(intent)
-            }
-            R.id.auth_button -> {
-                val intent = Intent(this, Auth::class.java)
-                startActivity(intent)
-            }
+        val intent: Intent = when (view.id) {
+            R.id.card_button -> Intent(this, Card::class.java)
+            R.id.dialer_button -> Intent(this, dialer::class.java)
+            R.id.auth_button -> Intent(this, Auth::class.java)
+            R.id.tts -> Intent(this, Speak::class.java)
+            R.id.counter_btn -> Intent(this, Counter::class.java)
+            else -> Intent(this, Carousel::class.java)
         }
+
+        startActivity(intent)
     }
 }

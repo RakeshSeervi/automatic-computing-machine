@@ -50,4 +50,13 @@
     <string name="card_label">Card</string>
     <string name="dialer">dialer</string>
     <string name="auth">Auth</string>
+    <string name="text_to_speech">Text To Speech</string>
+    <string name="speak">Speak</string>
+    <string name="your_text_here">your text here</string>
+    <string name="start">start</string>
+    <string name="stop">stop</string>
+    <string name="play">play</string>
+    <string name="carousel">Carousel</string>
+    <string name="counter">Counter</string>
+    <string name="carousel_image">carousel_image</string>
 </resources>

@@ -11,6 +11,9 @@
 
             <data android:mimeType="vnd.android.cursor.dir/group" />
         </intent>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
     </queries>
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -22,7 +25,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Card"></activity>
+        <activity android:name=".Speak" />
+        <activity android:name=".Counter" />
+        <activity android:name=".Carousel" />
+        <activity android:name=".Card" />
         <activity android:name=".Auth.Auth" />
         <activity android:name=".dialer" />
         <activity android:name=".MainActivity">

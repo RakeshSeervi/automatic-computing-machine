@@ -76,7 +76,7 @@ class SignIn : Fragment() {
         passwordEditText.addTextChangedListener(afterPasswordChangedListener)
     }
 
-    fun onClickListener(view: View) {
+    private fun onClickListener(view: View) {
         if (binding.username.text.toString() == username && binding.password.text.toString() == password) {
             findNavController().navigate(
                 SignInDirections.actionLoginFragmentToCard(
