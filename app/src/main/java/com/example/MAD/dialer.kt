@@ -18,7 +18,9 @@ class dialer : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         supportActionBar?.title = "Dialer"
+
         setContentView(R.layout.dialer)
         phoneNumberView = findViewById(R.id.phoneNumberView)
     }

@@ -15,6 +15,9 @@ class Speak : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.title = "Text To Speech"
+
         binding = ActivitySpeakBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

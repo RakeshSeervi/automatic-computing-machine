@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             R.id.auth_button -> Intent(this, Auth::class.java)
             R.id.tts -> Intent(this, Speak::class.java)
             R.id.counter_btn -> Intent(this, Counter::class.java)
+            R.id.parser -> Intent(this, Parser::class.java)
             else -> Intent(this, Carousel::class.java)
         }
 

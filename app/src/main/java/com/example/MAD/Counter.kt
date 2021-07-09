@@ -27,6 +27,9 @@ class Counter : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.title = "Counter"
+
         binding = ActivityCounterBinding.inflate(layoutInflater)
         mainHandler = Handler(Looper.getMainLooper())
         setContentView(binding.root)

@@ -21,6 +21,9 @@ class Carousel : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.title = "Carousel"
+
         binding = ActivityCarouselBinding.inflate(layoutInflater)
         mainHandler = Handler(Looper.getMainLooper())
         setContentView(binding.root)

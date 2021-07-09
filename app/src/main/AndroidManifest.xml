@@ -25,6 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name=".Parser" />
         <activity android:name=".Speak" />
         <activity android:name=".Counter" />
         <activity android:name=".Carousel" />
